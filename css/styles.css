@@ -1,0 +1,181 @@
+:root{
+  --bg:#0f0500;
+  --card:#1e0c02;
+  --accent:#e8a020;
+  --text:#f5ead8;
+  --muted:#a89070;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+header{
+  background:#1a0300;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h1{
+  color:var(--accent);
+}
+
+nav a{
+  color:var(--muted);
+  margin:5px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.intro{
+  text-align:center;
+  padding:30px;
+}
+
+.intro input{
+  padding:10px;
+  border-radius:20px;
+  border:1px solid #444;
+  background:#222;
+  color:white;
+  outline:none;
+}
+
+.about{
+  padding:25px;
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+}
+
+.about h2{
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.about p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.recipes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:10px;
+  text-align:center;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card a{
+  display:inline-block;
+  margin:10px;
+  padding:8px 12px;
+  background:#c0392b;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.card a:hover{
+  background:var(--accent);
+  color:black;
+}
+
+.category{
+  font-size:0.8rem;
+  color:var(--accent);
+}
+
+.recipe{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.recipe img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.recipe-container{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:30px;
+  margin-top:20px;
+}
+
+.ingredients li{
+  border-bottom:1px solid #333;
+  padding:8px;
+}
+
+.instructions li{
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+.recipe-meta{
+  margin-top:20px;
+  padding:15px;
+  background:var(--card);
+  border-radius:10px;
+}
+
+footer{
+  margin-top:auto;   /* 🔥 IMPORTANT */
+  text-align:center;
+  padding:10px;
+  background:#111;
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .recipe-container{
+    grid-template-columns:1fr;
+  }
+
+  .recipes{
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  }
+}
